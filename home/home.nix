@@ -1,4 +1,4 @@
-{ config, pkgs, programs, dotfiles, ... }:
+{ pkgs, dotfiles, ... }:
 
 {
   home.stateVersion = "24.05";
@@ -16,6 +16,8 @@
     pkgs.zoxide
     pkgs.fnm
     pkgs.starship
+    pkgs.neovim
+    pkgs.lunarvim
   ];
   programs.zsh = {
     enable = true;
