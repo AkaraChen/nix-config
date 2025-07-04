@@ -8,7 +8,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     dotfiles = {
-      url = "github:akarachen/dotfiles/6dabce6d34e55c2af2e4461314f02155ffad6992";
+      url = "github:akarachen/dotfiles/1c92c3e338b6fbc4714bc3bcdb1b851be7f4f931";
       flake = false;
     };
   };

@@ -32,5 +32,6 @@
     ".zshrc".source = "${dotfiles}/.zshrc";
     "starship.toml".source = "${dotfiles}/starship.toml";
     ".nuxtrc".source = "${dotfiles}/.nuxtrc";
+    "./.config/lvim/config.lua".source = "${dotfiles}/.config/lvim/config.lua";
   };
 }
