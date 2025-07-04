@@ -23,10 +23,11 @@
       enable = true;
     };
   };
+  programs.gh = {
+    enable = true;
+  };
   home.file = {
     ".zshrc".source = "${dotfiles}/.zshrc";
     "starship.toml".source = "${dotfiles}/starship.toml";
-    ".gitconfig".source = "${dotfiles}/.gitconfig";
-    ".global.gitignore".source = "${dotfiles}/.global.gitignore";
   };
 }
