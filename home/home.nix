@@ -31,5 +31,6 @@
   home.file = {
     ".zshrc".source = "${dotfiles}/.zshrc";
     "starship.toml".source = "${dotfiles}/starship.toml";
+    ".nuxtrc".source = "${dotfiles}/.nuxtrc";
   };
 }
