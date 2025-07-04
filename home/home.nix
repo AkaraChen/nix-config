@@ -15,7 +15,4 @@
     pkgs.fzf
     pkgs.zoxide
   ];
-  programs.zsh = {
-    enable = true;
-  };
 }

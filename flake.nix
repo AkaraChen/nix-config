@@ -16,5 +16,8 @@
         ./home/home.nix
       ];
     };
+    programs.zsh = {
+      enable = true;
+    };
   };
 }
