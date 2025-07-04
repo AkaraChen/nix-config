@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "dotfiles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1751608279,
+        "narHash": "sha256-XX0zJRFupxRkuDpDLnVUMVfkfj2MI2WaFyZuD1ZVe80=",
+        "owner": "akarachen",
+        "repo": "dotfiles",
+        "rev": "c8f9b577c12ad1905325f4f1f92ebdc704bd76d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "akarachen",
+        "ref": "c8f9b57",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -38,6 +55,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

@@ -7,17 +7,19 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    dotfiles = {
+      url = "github:akarachen/dotfiles/c8f9b57";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, ... }@inputs: {
     homeConfigurations.akrc = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules = [
         ./home/home.nix
       ];
-    };
-    programs.zsh = {
-      enable = true;
+      extraSpecialArgs = { inherit dotfiles; };
     };
   };
 }

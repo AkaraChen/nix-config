@@ -1,4 +1,4 @@
-{ config, pkgs, programs, ... }:
+{ config, pkgs, programs, dotfiles, ... }:
 
 {
   home.stateVersion = "24.05";
@@ -14,5 +14,16 @@
     pkgs.lsd
     pkgs.fzf
     pkgs.zoxide
+    pkgs.fnm
+    pkgs.starship
   ];
+  programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+    };
+  };
+  home.file = {
+    ".zshrc".source = "${dotfiles}/.zshrc";
+  };
 }
