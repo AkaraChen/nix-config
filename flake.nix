@@ -29,7 +29,6 @@
         ./home/home-mac.nix
         ./home/code.nix
         ./home/shell.nix
-        # ./home/desktop.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
