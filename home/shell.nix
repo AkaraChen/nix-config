@@ -1,18 +1,21 @@
 { pkgs, dotfiles, ... }:
 
 {
-  home.stateVersion = "24.05";
-  home.username = "akrc";
-  home.homeDirectory = "/home/akrc";
-  home.packages = [
-    pkgs.neofetch
-    pkgs.which
-    pkgs.bat
-    pkgs.lsd
-    pkgs.fzf
-    pkgs.zoxide
-    pkgs.starship
+  home.packages = with pkgs; [
+    # shell setups
+    starship
+
+    # cli tools
+    which
+    bat
+    lsd
+    fzf
+    zoxide
+    hyperfine
+    just
+    neofetch
   ];
+
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
