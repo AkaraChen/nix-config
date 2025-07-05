@@ -14,10 +14,21 @@
   };
 
   outputs = { nixpkgs, home-manager, dotfiles, ... }@inputs: {
-    homeConfigurations.akrc = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules = [
         ./home/home.nix
+        ./home/code.nix
+        ./home/shell.nix
+      ];
+      extraSpecialArgs = { inherit dotfiles; };
+    };
+    homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+      modules = [
+        ./home/home-mac.nix
+        ./home/code.nix
+        ./home/shell.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
