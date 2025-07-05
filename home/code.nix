@@ -15,6 +15,9 @@
     # devops
     ansible
     minikube
+
+    # tools
+    lazygit
   ];
   home.file = {
     "./.config/lvim/config.lua".source = "${dotfiles}/.config/lvim/config.lua";
