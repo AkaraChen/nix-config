@@ -11,6 +11,7 @@
     rustup
     uv
     fnm
+    bun
 
     # devops
     ansible
