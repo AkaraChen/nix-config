@@ -23,8 +23,17 @@
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
+    homeConfigurations.x86_64-linux = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      modules = [
+        ./home/home.nix
+        ./home/code.nix
+        ./home/shell.nix
+      ];
+      extraSpecialArgs = { inherit dotfiles; };
+    };
     homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
         ./home/home-mac.nix
         ./home/code.nix
