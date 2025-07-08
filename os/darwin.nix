@@ -7,8 +7,38 @@
   system.primaryUser = "akrc";
 
   # system settings
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
+    swapLeftCtrlAndFn = true;
+  };
+  system.defaults = {
+    NSGlobalDomain = {
+      AppleInterfaceStyleSwitchesAutomatically = true;
+      NSAutomaticCapitalizationEnabled = false;
+      NSAutomaticDashSubstitutionEnabled = false;
+      NSAutomaticInlinePredictionEnabled = false;
+      NSAutomaticQuoteSubstitutionEnabled = false;
+      NSAutomaticSpellingCorrectionEnabled = false;
+      NSDocumentSaveNewDocumentsToCloud = false;
+      "com.apple.mouse.tapBehavior" = 1; # tap to click
+    };
+    WindowManager = {
+      EnableStandardClickToShowDesktop = false;
+    };
+    dock = {
+      autohide = true;
+      show-recents = false;
+      wvous-bl-corner = 1; # disable bottom left corner hot corner
+      wvous-br-corner = 1;
+      wvous-tl-corner = 1;
+      wvous-tr-corner = 1;
+    };
+    trackpad = {
+      ActuationStrength = 0;
+      Clicking = true; # enable tap to click
+    };
+  };
 
   # brew settings
   homebrew = {
