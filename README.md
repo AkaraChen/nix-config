@@ -16,5 +16,5 @@ NIX_CONFIG="experimental-features = nix-command flakes" nix run home-manager/mas
 ## nix darwin
 
 ```bash
-sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch
+sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
 ```
