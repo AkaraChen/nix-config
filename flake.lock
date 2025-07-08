@@ -3,17 +3,17 @@
     "dotfiles": {
       "flake": false,
       "locked": {
-        "lastModified": 1751708564,
-        "narHash": "sha256-sTjLrjNf4Hcr7AUE70gmLY5pInYSaKJt3J0T/Gsnlqw=",
+        "lastModified": 1751980615,
+        "narHash": "sha256-mf3l9IJ/f2Wargg4LDOJHQyAxblPocyJOg74matu7fk=",
         "owner": "akarachen",
         "repo": "dotfiles",
-        "rev": "3834ccf7ef9cd341d239954dcc068c5d2159920d",
+        "rev": "4039eb21bfbaffd68a47ea15ff7cbce85023a3c5",
         "type": "github"
       },
       "original": {
         "owner": "akarachen",
         "repo": "dotfiles",
-        "rev": "3834ccf7ef9cd341d239954dcc068c5d2159920d",
+        "rev": "4039eb21bfbaffd68a47ea15ff7cbce85023a3c5",
         "type": "github"
       }
     },

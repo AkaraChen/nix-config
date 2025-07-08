@@ -7,11 +7,6 @@
   system.primaryUser = "akrc";
 
   # system settings
-  system.keyboard = {
-    enableKeyMapping = true;
-    remapCapsLockToEscape = true;
-    swapLeftCtrlAndFn = true;
-  };
   system.defaults = {
     NSGlobalDomain = {
       AppleInterfaceStyleSwitchesAutomatically = true;
