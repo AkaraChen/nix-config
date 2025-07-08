@@ -43,9 +43,6 @@
   # brew settings
   homebrew = {
     enable = true;
-    brews = [
-      "ffmpeg"
-    ];
     casks = [
       "adguard"
       "orbstack"
