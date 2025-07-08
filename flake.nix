@@ -7,13 +7,19 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # nix darwin
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     dotfiles = {
       url = "github:akarachen/dotfiles/3834ccf7ef9cd341d239954dcc068c5d2159920d";
       flake = false;
     };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, ... }@inputs: {
+    # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules = [
@@ -40,6 +46,13 @@
         ./home/shell.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
+    };
+
+    # darwin system configuration
+    darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./os/darwin.nix
+      ];
     };
   };
 }
