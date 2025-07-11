@@ -12,7 +12,7 @@
     uv
     fnm
     bun
-    proto
+    go
 
     # devops
     ansible
