@@ -12,10 +12,10 @@
     uv
     fnm
     bun
+    proto
 
     # devops
     ansible
-    minikube
 
     # tools
     lazygit
