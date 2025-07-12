@@ -38,6 +38,12 @@
   # brew settings
   homebrew = {
     enable = true;
+    taps = [
+      "sst/tap"
+    ];
+    brews = [
+      "sst/tap/opencode"
+    ];
     casks = [
       "adguard"
       "orbstack"
