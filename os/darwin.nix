@@ -43,6 +43,7 @@
     ];
     brews = [
       "sst/tap/opencode"
+      "llvm@19"
     ];
     casks = [
       "adguard"
