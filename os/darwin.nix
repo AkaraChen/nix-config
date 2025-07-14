@@ -63,6 +63,7 @@
       "font-fira-code-nerd-font"
       "figma"
       "zotero"
+      "font-caskaydia-mono-nerd-font"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
