@@ -43,6 +43,7 @@
     ];
     brews = [
       "sst/tap/opencode"
+      "openjdk"
     ];
     casks = [
       "adguard"
@@ -64,6 +65,7 @@
       "figma"
       "zotero"
       "font-caskaydia-mono-nerd-font"
+      "minecraft"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
