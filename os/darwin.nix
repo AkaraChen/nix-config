@@ -46,6 +46,7 @@
       "openjdk"
       "k6"
       "artillery"
+      "coreutils"
     ];
     casks = [
       "adguard"
