@@ -66,6 +66,7 @@
       "zotero"
       "font-caskaydia-mono-nerd-font"
       "minecraft"
+      "k6"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
