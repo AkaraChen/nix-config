@@ -45,6 +45,7 @@
       "sst/tap/opencode"
       "openjdk"
       "k6"
+      "artillery"
     ];
     casks = [
       "adguard"
