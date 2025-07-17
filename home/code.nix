@@ -19,6 +19,7 @@
 
     # tools
     lazygit
+    caddy
   ];
   home.file = {
     "./.config/lvim/config.lua".source = "${dotfiles}/.config/lvim/config.lua";
