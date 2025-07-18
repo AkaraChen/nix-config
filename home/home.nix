@@ -6,6 +6,6 @@
   home.homeDirectory = "/home/akrc";
 
   home.file = {
-    "./.config/hyprland/hyprland.conf".source = "${dotfiles}/.config/hyprland/hyprland.conf";
+    "./.config/hypr/hyprland.conf".source = "${dotfiles}/.config/hypr/hyprland.conf";
   };
 }
