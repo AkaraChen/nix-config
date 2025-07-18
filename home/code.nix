@@ -20,6 +20,10 @@
     # tools
     lazygit
     caddy
+
+    # node.js tools
+    nodePackages.vercel
+    nodePackages.serve
   ];
   home.file = {
     "./.config/lvim/config.lua".source = "${dotfiles}/.config/lvim/config.lua";
