@@ -5,7 +5,7 @@
   home.username = "akrc";
   home.homeDirectory = "/home/akrc";
 
-  home.files = {
+  home.file = {
     "./.config/hyprland/hyprland.conf".source = "${dotfiles}/.config/hyprland/hyprland.conf";
   };
 }
