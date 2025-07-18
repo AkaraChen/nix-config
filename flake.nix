@@ -13,7 +13,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     dotfiles = {
-      url = "github:akarachen/dotfiles/5b80183ec0ebb11961965dea0f143dd24256ed75";
+      url = "github:akarachen/dotfiles/4137c0004e5b4bf186da4d94e14bf9b1cb6e31e1";
       flake = false;
     };
   };
