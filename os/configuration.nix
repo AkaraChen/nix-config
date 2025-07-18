@@ -47,6 +47,9 @@
   # Enable automatic login for the user.
   services.getty.autologinUser = "akrc";
 
+  # Enable flatpak support
+  services.flatpak.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -83,5 +86,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
+
+  # Hyprland configuration
   programs.hyprland.enable = true;
 }
