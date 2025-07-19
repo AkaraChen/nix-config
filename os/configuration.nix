@@ -108,7 +108,7 @@
     withUWSM = true;
     catppuccin = {
       enable = true;
-    }
+    };
   };
 
   # setup gnome for display manager
