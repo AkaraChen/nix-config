@@ -16,18 +16,10 @@
       url = "github:akarachen/dotfiles/58701eb5abe3127fd09e8def3b541c79bbbf0e3b";
       flake = false;
     };
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
-
-    stylix = {
-      enable = true;
-      base16Scheme = "${nixpkgs.legacyPackages.aarch64-linux.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-    };
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, ... }@inputs: {
 
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
@@ -68,7 +60,6 @@
     # nixos system configuration
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
-        stylix.nixosModules.stylix
         ./os/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -78,7 +69,6 @@
             };
             users.akrc = {
               imports = [
-                stylix.homeModules.stylix
                 ./home/home.nix
                 ./shared/code.nix
                 ./shared/shell.nix
