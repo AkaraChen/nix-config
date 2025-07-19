@@ -22,5 +22,5 @@ sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/
 ## nixos
 
 ```bash
-sudo ./apply-nixos.sh
+./apply-nixos.sh
 ```
