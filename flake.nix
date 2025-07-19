@@ -45,7 +45,7 @@
         catppuccin.homeModules.catppuccin
         ./home/desktop.nix
       ];
-      extraSpecialArgs = { inherit dotfiles; };
+      extraSpecialArgs = { inherit dotfiles; inherit catppuccin; };
     };
     homeConfigurations.x86_64-linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
