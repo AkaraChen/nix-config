@@ -69,6 +69,7 @@
         catppuccin.nixosModules.catppuccin
         stylix.nixosModules.stylix
         ./os/configuration.nix
+        ./home/desktop.nix
       ];
     };
   };
