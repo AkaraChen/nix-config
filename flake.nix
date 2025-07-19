@@ -73,12 +73,7 @@
           home-manager.users.akrc = {
             imports = [
               catppuccin.homeModules.catppuccin
-              ./home/desktop.nix
-              ./home/home.nix
-              ./home/code.nix
-              ./home/shell.nix
             ];
-            specialArgs = { inherit catppuccin; inherit dotfiles; };
           };
         }
       ];
