@@ -69,7 +69,7 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.users.akrc = {
-            imports = [
+            modules = [
               ./home/desktop.nix
               ./home/home.nix
               ./home/code.nix
