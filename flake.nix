@@ -2,7 +2,7 @@
   description = "My personal NixOS/Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
@@ -17,8 +17,7 @@
       flake = false;
     };
     stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/stylix/release-25.05";
     };
   };
 
