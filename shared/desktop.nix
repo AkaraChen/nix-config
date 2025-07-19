@@ -2,6 +2,7 @@
 
 {
     home.packages = with pkgs; [
+        sway
         nerd-fonts.zed-mono
         ghostty
         rofi
