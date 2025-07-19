@@ -77,7 +77,6 @@
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
         catppuccin.nixosModules.catppuccin
-        stylix.nixosModules.stylix
         ./os/configuration.nix
       ];
       specialArgs = { inherit catppuccin; };
