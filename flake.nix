@@ -71,7 +71,6 @@
         ./os/configuration.nix
         ./home/desktop.nix
       ];
-      catppuccin.enable = true;
     };
   };
 }
