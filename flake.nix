@@ -64,11 +64,11 @@
 
     # nixos system configuration
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         catppuccin.nixosModules.catppuccin
         stylix.nixosModules.stylix
         ./os/configuration.nix
+        home-manager.nixosModules.home-manager
         {
           home-manager.users.akrc = {
             imports = [
@@ -78,6 +78,7 @@
               ./home/code.nix
               ./home/shell.nix
             ];
+            extraSpecialArgs = { inherit catppuccin; inherit dotfiles; };
           };
         }
       ];
