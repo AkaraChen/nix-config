@@ -13,7 +13,7 @@
 
   stylix.enable = true;
   qt.style.name = "kvantum";
-  qt.platformName = "kvantum";
+  qt.platformTheme.name = "kvantum";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   # Bootloader.
