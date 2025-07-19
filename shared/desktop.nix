@@ -10,5 +10,5 @@
     ];
     home.files = {
         ".config/sway".source = "${dotfiles}/.config/sway";
-    }
+    };
 }
