@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, catppuccin, ... }:
 
 {
   imports =
@@ -111,4 +111,7 @@
   # setup gnome for display manager
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+
+  # setup themes
+  catppuccin.enable = true;
 }

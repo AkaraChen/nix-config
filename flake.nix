@@ -71,6 +71,7 @@
         ./os/configuration.nix
         ./home/desktop.nix
       ];
+      specialArgs = { inherit catppuccin; };
     };
   };
 }
