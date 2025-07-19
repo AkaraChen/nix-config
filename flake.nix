@@ -70,10 +70,10 @@
         {
           home-manager.users.akrc = {
             modules = [
-              catppuccin.homeModules.catppuccin
               ./home/home.nix
               ./home/code.nix
               ./home/shell.nix
+              catppuccin.homeModules.catppuccin
               ./home/desktop.nix
             ];
             extraSpecialArgs = { inherit catppuccin; inherit dotfiles; };
