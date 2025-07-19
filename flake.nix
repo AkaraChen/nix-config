@@ -91,7 +91,7 @@
         }
         ./os/configuration.nix
       ];
-      specialArgs = { inherit catppuccin; inherit dotfiles; };
+      specialArgs = { inherit catppuccin; };
     };
   };
 }
