@@ -78,7 +78,7 @@
               ./home/code.nix
               ./home/shell.nix
             ];
-            extraSpecialArgs = { inherit catppuccin; inherit dotfiles; };
+            specialArgs = { inherit catppuccin; inherit dotfiles; };
           };
         }
       ];
