@@ -8,17 +8,11 @@
     };
     home.packages = with pkgs; [
         kitty
-        hyprland
         waybar
         kitty
         firefox
         nerd-fonts.im-writing
     ];
-    # Hyprland configuration
-    programs.hyprland = {
-        enable = true;
-        withUWSM = true;
-    };
 
     # setup gnome for display manager
     services.displayManager.gdm.enable = true;
