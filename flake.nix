@@ -21,9 +21,10 @@
       url = "github:akarachen/dotfiles/2e0b8e76d6c31c1c768f80f300e1bf23de20ff83";
       flake = false;
     };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, catppuccin, ... }@inputs: {
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
@@ -64,6 +65,7 @@
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        catppuccin.nixosModules.catppuccin
         stylix.nixosModules.stylix
         ./os/configuration.nix
       ];
