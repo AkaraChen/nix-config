@@ -68,18 +68,23 @@
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
         {
-          home-manager.users.akrc = {
-            home = {
-              stateVersion = "24.05";
+          home-manager = {
+            extraSpecialArgs = {
+              inherit catppuccin;
+              inherit dotfiles;
             };
-            modules = [
-              ./home/home.nix
-              ./home/code.nix
-              ./home/shell.nix
-              catppuccin.homeModules.catppuccin
-              ./home/desktop.nix
-            ];
-            extraSpecialArgs = { inherit catppuccin; inherit dotfiles; };
+            users.akrc = {
+              home = {
+                stateVersion = "24.05";
+              };
+              modules = [
+                ./home/home.nix
+                ./home/code.nix
+                ./home/shell.nix
+                catppuccin.homeModules.catppuccin
+                ./home/desktop.nix
+              ];
+            };
           };
         }
         ./os/configuration.nix
