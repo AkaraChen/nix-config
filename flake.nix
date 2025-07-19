@@ -72,10 +72,10 @@
             };
             users.akrc = {
               imports = [
+                stylix.homeModules.stylix
                 ./home/home.nix
                 ./home/code.nix
                 ./home/shell.nix
-                stylix.homeModules.stylix
                 ./home/desktop.nix
               ];
             };
