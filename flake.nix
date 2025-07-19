@@ -41,6 +41,17 @@
       extraSpecialArgs = { inherit dotfiles; };
     };
 
+    homeConfigurations.linux-gui = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
+      modules = [
+        ./home/home.nix
+        ./shared/code.nix
+        ./shared/shell.nix
+        ./shared/desktop.nix
+      ];
+      extraSpecialArgs = { inherit dotfiles; };
+    };
+
     homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
