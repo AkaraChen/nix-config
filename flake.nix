@@ -23,6 +23,12 @@
   };
 
   outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
+
+    stylix = {
+      enable = true;
+      base16Scheme = "${nixpkgs.legacyPackages.aarch64-linux.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    };
+
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
