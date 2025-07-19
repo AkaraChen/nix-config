@@ -106,6 +106,7 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
+    cache.enable = true;
   };
 
   # Hyprland configuration
