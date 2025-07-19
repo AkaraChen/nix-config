@@ -100,5 +100,12 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   # Hyprland configuration
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 }
