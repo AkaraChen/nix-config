@@ -80,6 +80,7 @@
                 ./home/code.nix
                 ./home/shell.nix
                 catppuccin.homeModules.catppuccin
+                stylix.homeModules.stylix
                 ./home/desktop.nix
               ];
             };
