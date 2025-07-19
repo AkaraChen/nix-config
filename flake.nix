@@ -62,9 +62,9 @@
     # nixos system configuration
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
-        home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
         ./os/configuration.nix
+        home-manager.nixosModules.home-manager
         {
           home-manager = {
             extraSpecialArgs = {
