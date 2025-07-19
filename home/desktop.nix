@@ -4,5 +4,8 @@
     wayland.windowManager.hyprland.enable = true;
     catppuccin = {
         enable = true;
+        hyprland = {
+            enable = true;
+        }
     };
 }

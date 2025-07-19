@@ -42,8 +42,8 @@
         ./home/home.nix
         ./home/code.nix
         ./home/shell.nix
-        ./home/desktop.nix
         catppuccin.homeModules.catppuccin
+        ./home/desktop.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
