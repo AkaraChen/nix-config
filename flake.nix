@@ -62,6 +62,7 @@
       modules = [
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
+        ./os/configuration.nix
         {
           home-manager = {
             extraSpecialArgs = {
@@ -69,10 +70,7 @@
               inherit dotfiles;
             };
             users.akrc = {
-              home = {
-                stateVersion = "24.05";
-              };
-              modules = [
+              imports = [
                 ./home/home.nix
                 ./home/code.nix
                 ./home/shell.nix
@@ -82,7 +80,6 @@
             };
           };
         }
-        ./os/configuration.nix
       ];
       specialArgs = { inherit catppuccin; inherit dotfiles; };
     };
