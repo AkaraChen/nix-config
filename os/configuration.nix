@@ -11,8 +11,10 @@
     ];
   nix.settings.experimental-features = "nix-command flakes";
 
-  stylix.enable = true;
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
