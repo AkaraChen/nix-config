@@ -38,6 +38,8 @@
     variant = "";
   };
 
+  fonts.fontDir.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.akrc = {
     isNormalUser = true;
@@ -48,6 +50,7 @@
       waybar
       hyprpaper
       firefox
+      nerd-fonts.im-writing
     ];
   };
 
