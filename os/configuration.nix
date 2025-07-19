@@ -10,6 +10,9 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+
   nix.settings.experimental-features = "nix-command flakes";
 
   # Bootloader.

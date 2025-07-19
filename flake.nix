@@ -17,9 +17,13 @@
       flake = false;
     };
     catppuccin.url = "github:catppuccin/nix";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, catppuccin, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, catppuccin, stylix, ... }@inputs: {
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
@@ -62,6 +66,7 @@
       modules = [
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
         ./os/configuration.nix
         {
           home-manager = {
