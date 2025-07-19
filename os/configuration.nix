@@ -19,7 +19,7 @@
   };
 
   # Optimize Nix store
-  nix.settings.auto-optimise-store = true;
+  nix.optimise.automatic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
