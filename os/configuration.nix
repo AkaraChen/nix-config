@@ -106,6 +106,9 @@
   programs.hyprland = {
     enable = true;
     withUWSM = true;
+    catppuccin = {
+      enable = true;
+    }
   };
 
   # setup gnome for display manager
@@ -113,5 +116,8 @@
   services.desktopManager.gnome.enable = true;
 
   # setup themes
-  catppuccin.enable = true;
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
 }
