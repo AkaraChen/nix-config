@@ -8,9 +8,6 @@
 
   # system settings
   system.defaults = {
-    universalaccess = {
-      reduceMotion = true; # reduce motion for accessibility
-    };
     NSGlobalDomain = {
       AppleInterfaceStyleSwitchesAutomatically = true;
       NSAutomaticCapitalizationEnabled = false;
