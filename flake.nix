@@ -79,19 +79,15 @@
         catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
         {
-          # if you use home-manager
-          home-manager.users.pepperjack = {
+          home-manager.users.akrc = {
             imports = [
               ./home/desktop.nix
               ./home/home.nix
               ./home/code.nix
               ./home/shell.nix
-              catppuccin.homeManagerModules.catppuccin
+              catppuccin.homeModules.catppuccin
             ];
-            inputs = {
-              inherit catppuccin;
-              inherit dotfiles;
-            };
+            extraSpecialArgs = { inherit catppuccin; inherit dotfiles; };
           };
         }
         ./os/configuration.nix
