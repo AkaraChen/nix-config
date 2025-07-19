@@ -34,8 +34,8 @@
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
       modules = [
         ./home/home.nix
-        ./home/code.nix
-        ./home/shell.nix
+        ./shared/code.nix
+        ./shared/shell.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
@@ -43,8 +43,8 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
         ./home/home.nix
-        ./home/code.nix
-        ./home/shell.nix
+        ./shared/code.nix
+        ./shared/shell.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
@@ -52,8 +52,8 @@
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
         ./home/home-mac.nix
-        ./home/code.nix
-        ./home/shell.nix
+        ./shared/code.nix
+        ./shared/shell.nix
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
@@ -80,9 +80,9 @@
               imports = [
                 stylix.homeModules.stylix
                 ./home/home.nix
-                ./home/code.nix
-                ./home/shell.nix
-                ./home/desktop.nix
+                ./shared/code.nix
+                ./shared/shell.nix
+                ./shared/desktop.nix
               ];
             };
           };
