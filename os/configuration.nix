@@ -47,7 +47,13 @@
     isNormalUser = true;
     description = "akrc";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      kitty
+      waybar
+      hyprpaper
+      firefox
+      nerd-fonts.im-writing
+    ];
     shell = pkgs.zsh;
   };
 
@@ -101,4 +107,14 @@
     enable = true;
     flavor = "mocha";
   };
+
+  # Hyprland configuration
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
+
+  # setup gnome for display manager
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 }
