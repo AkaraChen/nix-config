@@ -8,7 +8,7 @@
         waybar
         mako
     ];
-    home.files = {
+    home.file = {
         ".config/sway".source = "${dotfiles}/.config/sway";
     };
 }
