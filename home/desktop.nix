@@ -6,6 +6,12 @@
         enable = true;
         hyprland = {
             enable = true;
-        }
+        };
+        waybar = {
+            enable = true;
+        };
+        kitty = {
+            enable = true;
+        };
     };
 }
