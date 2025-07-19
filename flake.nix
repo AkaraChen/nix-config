@@ -36,6 +36,17 @@
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
+    homeConfigurations.nixos = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-linux;
+      modules = [
+        ./home/home.nix
+        ./home/code.nix
+        ./home/shell.nix
+        ./home/desktop.nix
+        catppuccin.homeModules.catppuccin
+      ];
+      extraSpecialArgs = { inherit dotfiles; };
+    };
     homeConfigurations.x86_64-linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [
@@ -68,14 +79,6 @@
         catppuccin.nixosModules.catppuccin
         stylix.nixosModules.stylix
         ./os/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.users.akrc = {
-            imports = [
-              catppuccin.homeModules.catppuccin
-            ];
-          };
-        }
       ];
       specialArgs = { inherit catppuccin; };
     };
