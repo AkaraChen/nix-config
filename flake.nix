@@ -72,7 +72,7 @@
               home = {
                 stateVersion = "24.05";
               };
-              imports = [
+              modules = [
                 ./home/home.nix
                 ./home/code.nix
                 ./home/shell.nix
