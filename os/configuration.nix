@@ -9,11 +9,12 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
     ];
+  nix.settings.experimental-features = "nix-command flakes";
 
   stylix.enable = true;
+  qt.style.name = "kvantum";
+  qt.platformName = "kvantum";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
-  nix.settings.experimental-features = "nix-command flakes";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
