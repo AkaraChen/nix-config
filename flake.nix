@@ -87,12 +87,11 @@
               ./home/shell.nix
               catppuccin.homeModules.catppuccin
             ];
-            extraSpecialArgs = { inherit catppuccin; inherit dotfiles; };
           };
         }
         ./os/configuration.nix
       ];
-      specialArgs = { inherit catppuccin; };
+      specialArgs = { inherit catppuccin; inherit dotfiles; };
     };
   };
 }
