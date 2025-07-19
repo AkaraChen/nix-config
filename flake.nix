@@ -77,6 +77,23 @@
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
         catppuccin.nixosModules.catppuccin
+        home-manager.nixosModules.home-manager
+        {
+          # if you use home-manager
+          home-manager.users.pepperjack = {
+            imports = [
+              ./home/desktop.nix
+              ./home/home.nix
+              ./home/code.nix
+              ./home/shell.nix
+              catppuccin.homeManagerModules.catppuccin
+            ];
+            inputs = {
+              inherit catppuccin;
+              inherit dotfiles;
+            };
+          };
+        }
         ./os/configuration.nix
       ];
       specialArgs = { inherit catppuccin; };
