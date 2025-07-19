@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, dotfiles, ... }:
 
 {
     home.packages = with pkgs; [
@@ -8,4 +8,7 @@
         waybar
         mako
     ];
+    home.files = {
+        ".config/sway".source = "${dotfiles}/.config/sway";
+    }
 }
