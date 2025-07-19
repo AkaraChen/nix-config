@@ -102,10 +102,6 @@
       withUWSM = true;
   };
 
-  # setup gnome for display manager
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   # setup themes
   catppuccin = {
     enable = true;
