@@ -40,20 +40,21 @@
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
-    homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-      modules = [
-        ./home/home-mac.nix
-        ./shared/code.nix
-        ./shared/shell.nix
-      ];
-      extraSpecialArgs = { inherit dotfiles; };
-    };
 
     # darwin system configuration
     darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
       modules = [
         ./os/darwin.nix
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.users.akrc = {
+            imports = [
+              ./home/home-mac.nix
+              ./shared/code.nix
+              ./shared/shell.nix
+            ];
+          };
+        }
       ];
     };
 
