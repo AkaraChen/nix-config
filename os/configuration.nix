@@ -46,6 +46,8 @@
     packages = with pkgs; [
       kitty
       waybar
+      hyprpaper
+      firefox
     ];
   };
 
