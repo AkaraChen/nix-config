@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -18,7 +23,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
@@ -52,6 +57,15 @@
     darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
       modules = [
         ./os/darwin.nix
+      ];
+    };
+
+    # nixos system configuration
+    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        stylix.nixosModules.stylix
+        ./os/configuration.nix
       ];
     };
   };

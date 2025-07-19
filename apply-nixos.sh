@@ -1,4 +1,2 @@
-sudo rm /etc/nixos/configuration.nix
-sudo cp ./os/configuration.nix /etc/nixos/configuration.nix
-sudo nixos-rebuild switch
+sudo nixos-rebuild switch --flake .#nixos
 nix run home-manager/master -- switch --flake .#linux
