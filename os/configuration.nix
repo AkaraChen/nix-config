@@ -52,6 +52,7 @@
       firefox
       nerd-fonts.im-writing
     ];
+    shell = pkgs.zsh;
   };
 
   # Enable automatic login for the user.
