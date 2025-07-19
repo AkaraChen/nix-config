@@ -16,14 +16,13 @@
       url = "github:akarachen/dotfiles/58701eb5abe3127fd09e8def3b541c79bbbf0e3b";
       flake = false;
     };
-    catppuccin.url = "github:catppuccin/nix";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, catppuccin, stylix, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
@@ -31,7 +30,6 @@
         ./home/home.nix
         ./home/code.nix
         ./home/shell.nix
-        catppuccin.homeModules.catppuccin
       ];
       extraSpecialArgs = { inherit dotfiles; };
     };
@@ -64,14 +62,12 @@
     # nixos system configuration
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
-        catppuccin.nixosModules.catppuccin
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
         ./os/configuration.nix
         {
           home-manager = {
             extraSpecialArgs = {
-              inherit catppuccin;
               inherit dotfiles;
             };
             users.akrc = {
@@ -79,7 +75,6 @@
                 ./home/home.nix
                 ./home/code.nix
                 ./home/shell.nix
-                catppuccin.homeModules.catppuccin
                 stylix.homeModules.stylix
                 ./home/desktop.nix
               ];
@@ -87,7 +82,7 @@
           };
         }
       ];
-      specialArgs = { inherit catppuccin; inherit dotfiles; };
+      specialArgs = { inherit dotfiles; };
     };
   };
 }
