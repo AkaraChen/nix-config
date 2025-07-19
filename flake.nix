@@ -69,6 +69,9 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.users.akrc = {
+            home = {
+              stateVersion = "24.05";
+            };
             modules = [
               ./home/home.nix
               ./home/code.nix
