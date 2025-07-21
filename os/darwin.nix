@@ -79,6 +79,7 @@
       "font-caskaydia-mono-nerd-font"
       "minecraft"
       "jordanbaird-ice"
+      "discord"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
