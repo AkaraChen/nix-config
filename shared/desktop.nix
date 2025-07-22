@@ -77,5 +77,5 @@
       settings = {
         theme = "catppuccin-mocha";
       };
-    }
+    };
 }
