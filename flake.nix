@@ -20,6 +20,7 @@
   };
 
   outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, ... }@inputs: {
+    nixpkgs.config.allowUnfree = true;
 
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
