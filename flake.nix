@@ -78,7 +78,7 @@
         stylix.nixosModules.stylix
         {
           stylix.enable = true;
-          stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+          stylix.base16Scheme = "${nixpkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
         }
         ./os/configuration.nix
         home-manager.nixosModules.home-manager
