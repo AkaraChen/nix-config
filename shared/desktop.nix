@@ -11,7 +11,7 @@
         ];
         "windowrulev2" = [
           "noborder, class:^(ulauncher)$"
-        ],
+        ];
         bind =
           [
             "$mod, F, exec, firefox"
