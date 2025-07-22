@@ -14,7 +14,7 @@
             "$mod, F, exec, firefox"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
-            "$mod, D, exec, rofi -show drun"
+            "$mod, D, exec, ulauncher"
           ]
           ++ (
             # workspaces
@@ -33,14 +33,13 @@
             "$mod, RIGHT, resizeactive, 10 0"
             "$mod, UP, resizeactive, 0 -10"
             "$mod, DOWN, resizeactive, 0 10"
-            "$mod, mouse:272, resizeactive"
           ];
       };
     };
     home.packages = with pkgs; [
         nerd-fonts.zed-mono
         ghostty
-        rofi
+        ulauncher
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
