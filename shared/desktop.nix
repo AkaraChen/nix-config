@@ -56,6 +56,7 @@
         ghostty
         ulauncher
         hyprpaper
+        xcursor-pro
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
