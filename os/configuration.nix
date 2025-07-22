@@ -48,16 +48,15 @@
   };
 
   fonts.fontDir.enable = true;
-
+  fonts.packages = with pkgs; [
+    nerd-fonts.zed-mono
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+  ];
   fonts.fontconfig = {
     enable = true;
     antialias = true;
     hinting.enable = true;
-    packages = with pkgs; [
-      nerd-fonts.zed-mono
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-    ];
     defaultFonts = {
       monospace = [
         "ZedMono Nerd Font"
