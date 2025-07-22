@@ -56,8 +56,18 @@
         ghostty
         ulauncher
         hyprpaper
-        xcursor-pro
+        bibata-cursors
     ];
+    home.pointerCursor = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+      size = 24;
+      gtk.enable = true;
+    };
+    home.sessionVariables = {
+      HYPRCURSOR_THEME = "Bibata-Modern-Classic";
+      HYPRCURSOR_SIZE = "24";
+    };
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
       "./.config/assets".source = "${dotfiles}/.config/assets";
