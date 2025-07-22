@@ -49,6 +49,29 @@
 
   fonts.fontDir.enable = true;
 
+  fonts.fontconfig = {
+    enable = true;
+    packages = with pkgs; [
+      nerd-fonts.zed-mono
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+    ];
+    defaultFonts = {
+      antialias = true;
+      hinting.enable = true;
+      monospace = [
+        "ZedMono Nerd Font"
+      ];
+      sansSerif = [
+        "Noto Sans CJK SC"
+      ];
+      serif = [
+        "Noto Serif CJK SC"
+      ];
+    };
+  };
+
+
   programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

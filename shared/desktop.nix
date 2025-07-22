@@ -46,29 +46,10 @@
       };
     };
     home.packages = with pkgs; [
-        nerd-fonts.zed-mono
         ghostty
         ulauncher
-        noto-fonts-cjk-sans
-        noto-fonts-cjk-serif
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
-    };
-    fonts.fontconfig = {
-      enable = true;
-      defaultFonts = {
-        antialias = true;
-        hinting.enable = true;
-        monospace = [
-          "ZedMono Nerd Font"
-        ];
-        sansSerif = [
-          "Noto Sans CJK SC"
-        ];
-        serif = [
-          "Noto Serif CJK SC"
-        ];
-      };
     };
 }
