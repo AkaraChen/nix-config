@@ -14,7 +14,7 @@
             "$mod, F, exec, firefox"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
-            "$mod, D, exec, rofi --show drun"
+            "$mod, D, exec, rofi -show drun"
           ]
           ++ (
             # workspaces
