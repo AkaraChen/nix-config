@@ -48,7 +48,7 @@
     home.packages = with pkgs; [
         ghostty
         ulauncher
-        discord
+        legcord
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
