@@ -17,7 +17,6 @@
           "rounding 0, class:^(ulauncher)$"
           "noblur, class:^(ulauncher)$"
           "opaque, class:^(ulauncher)$"
-          "noanim, class:^(ulauncher)$"
         ];
         bind =
           [
