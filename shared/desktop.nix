@@ -44,6 +44,5 @@
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
-      "./.local/share/rofi/themes".source = "${dotfiles}/.local/share/rofi/themes";
     };
 }
