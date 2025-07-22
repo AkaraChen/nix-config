@@ -13,10 +13,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     dotfiles = {
-      url = "github:akarachen/dotfiles/116f473230b5a2cd20e5e4436e14a92e616e662b";
+      url = "github:akarachen/dotfiles/058f5151ccfbfcb18d7415ab05fb6eca2e8cd239";
       flake = false;
     };
-    
+
   };
 
   outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, ... }@inputs: {

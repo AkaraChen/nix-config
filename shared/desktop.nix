@@ -42,4 +42,7 @@
         ghostty
         wofi
     ];
+    home.file = {
+      "./.config/waybar".source = "${dotfiles}/.config/waybar";
+    };
 }
