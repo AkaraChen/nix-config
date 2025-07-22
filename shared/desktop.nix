@@ -24,7 +24,7 @@
               )
               9)
           );
-      }
+      };
     };
     home.packages = with pkgs; [
         nerd-fonts.zed-mono
