@@ -51,14 +51,14 @@
 
   fonts.fontconfig = {
     enable = true;
+    antialias = true;
+    hinting.enable = true;
     packages = with pkgs; [
       nerd-fonts.zed-mono
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
     ];
     defaultFonts = {
-      antialias = true;
-      hinting.enable = true;
       monospace = [
         "ZedMono Nerd Font"
       ];
