@@ -5,10 +5,16 @@
       enable = true;
       settings = {
         "$mod" = "SUPER";
+        "exec-once"= [
+          "waybar"
+          "ghostty"
+        ];
         bind =
           [
             "$mod, F, exec, firefox"
-            ", Print, exec, grimblast copy area"
+            "$mod, RETURN, exec, ghostty"
+            "$mod, Q, killactive,"
+            "$mod, D, exec, wofi --show drun"
           ]
           ++ (
             # workspaces
@@ -27,5 +33,6 @@
     home.packages = with pkgs; [
         nerd-fonts.zed-mono
         ghostty
+        wofi
     ];
 }
