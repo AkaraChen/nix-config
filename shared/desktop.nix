@@ -70,5 +70,5 @@
           "Noto Serif CJK SC"
         ];
       };
-    }
+    };
 }
