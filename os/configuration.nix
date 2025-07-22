@@ -55,8 +55,6 @@
   ];
   fonts.fontconfig = {
     enable = true;
-    antialias = true;
-    hinting.enable = true;
     defaultFonts = {
       monospace = [
         "ZedMono Nerd Font"
