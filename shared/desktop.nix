@@ -9,6 +9,7 @@
           rounding = 10;
           blur.enabled = true;
           inactive_opacity = 0.9;
+          active_opacity = 0.9;
         };
         "exec-once" = [
           "waybar"
