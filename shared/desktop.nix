@@ -57,7 +57,7 @@
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
-      "~/.config/assets".source = "${dotfiles}/.config/assets"
+      "~/.config/assets".source = "${dotfiles}/.config/assets";
       "./.config/hypr/hyprpaper.conf".source = "${dotfiles}/.config/hypr/hyprpaper.conf";
     };
 }
