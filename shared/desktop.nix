@@ -57,5 +57,6 @@
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
+      "./.config/hypr/hyprpaper.conf".source = "${dotfiles}/.config/hypr/hyprpaper.conf";
     };
 }
