@@ -14,7 +14,7 @@
             "$mod, F, exec, firefox"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
-            "$mod, D, exec, wofi --show drun"
+            "$mod, D, exec, rofi --show drun"
           ]
           ++ (
             # workspaces
@@ -40,7 +40,7 @@
     home.packages = with pkgs; [
         nerd-fonts.zed-mono
         ghostty
-        wofi
+        rofi
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
