@@ -15,6 +15,10 @@
           "noborder, class:^(ulauncher)$"
           "noshadow, class:^(ulauncher)$"
           "rounding 0, class:^(ulauncher)$"
+          "noblur, class:^(ulauncher)$"
+          "opaque, class:^(ulauncher)$"
+          "noanim, class:^(ulauncher)$"
+          "workspace special silent, class:^(ulauncher)$"
         ];
         bind =
           [
