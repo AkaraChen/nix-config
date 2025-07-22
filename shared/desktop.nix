@@ -1,9 +1,6 @@
 { pkgs, dotfiles, ... }:
 
 {
-    home.packages = with pkgs; [
-
-    ];
     wayland.windowManager.hyprland = {
       enable = true;
       settings = {
