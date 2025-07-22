@@ -28,6 +28,13 @@
               )
               9)
           );
+          binde = [
+            "$mod, LEFT, resizeactive, -10 0"
+            "$mod, RIGHT, resizeactive, 10 0"
+            "$mod, UP, resizeactive, 0 -10"
+            "$mod, DOWN, resizeactive, 0 10"
+            "$mod, mouse:272, resizeactive"
+          ];
       };
     };
     home.packages = with pkgs; [
