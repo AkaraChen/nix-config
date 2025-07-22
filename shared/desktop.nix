@@ -5,10 +5,13 @@
       enable = true;
       settings = {
         "$mod" = "SUPER";
-        "exec-once"= [
+        "exec-once" = [
           "waybar"
           "ghostty"
         ];
+        "windowrulev2" = [
+          "noborder, class:^(ulauncher)$"
+        ],
         bind =
           [
             "$mod, F, exec, firefox"
