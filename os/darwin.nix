@@ -81,6 +81,7 @@
       "jordanbaird-ice"
       "discord"
       "font-space-mono-nerd-font"
+      "steam"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
