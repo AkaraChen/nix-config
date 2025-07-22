@@ -10,7 +10,11 @@
           "ghostty"
         ];
         "windowrulev2" = [
+          "float, class:^(ulauncher)$"
+          "center, class:^(ulauncher)$"
           "noborder, class:^(ulauncher)$"
+          "noshadow, class:^(ulauncher)$"
+          "rounding 0, class:^(ulauncher)$"
         ];
         bind =
           [
