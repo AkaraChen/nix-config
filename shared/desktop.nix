@@ -8,8 +8,8 @@
         decoration = {
           rounding = 10;
           blur.enabled = true;
-          inactive_opacity = 0.9;
-          active_opacity = 0.9;
+          inactive_opacity = 0.6;
+          active_opacity = 0.6;
         };
         "exec-once" = [
           "waybar"
