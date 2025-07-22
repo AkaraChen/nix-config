@@ -17,9 +17,13 @@
       flake = false;
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
     # home manager configurations
     homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-linux;
@@ -54,6 +58,7 @@
     homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
+        stylix.darwinModules.stylix
         ./home/home-mac.nix
         ./shared/code.nix
         ./shared/shell.nix
@@ -71,6 +76,7 @@
     # nixos system configuration
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
+        stylix.nixosModules.stylix
         ./os/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -89,6 +95,7 @@
           };
         }
       ];
+      extraSpecialArgs = { inherit stylix; };
     };
   };
 }
