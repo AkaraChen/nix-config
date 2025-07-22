@@ -80,7 +80,7 @@
       kitty
       waybar
       hyprpaper
-      firefox
+      brave
       nerd-fonts.im-writing
     ];
     shell = pkgs.zsh;

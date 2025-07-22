@@ -20,7 +20,7 @@
         ];
         bind =
           [
-            "$mod, F, exec, firefox"
+            "$mod, F, exec, brave"
             "$mod, RETURN, exec, ghostty"
             "$mod, Q, killactive,"
             "$mod, D, exec, ulauncher"
