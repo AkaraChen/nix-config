@@ -58,7 +58,6 @@
     homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.aarch64-darwin;
       modules = [
-        stylix.darwinModules.stylix
         ./home/home-mac.nix
         ./shared/code.nix
         ./shared/shell.nix
@@ -77,6 +76,10 @@
     nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
       modules = [
         stylix.nixosModules.stylix
+        {
+          stylix.enable = true;
+          stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+        }
         ./os/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -95,7 +98,6 @@
           };
         }
       ];
-      extraSpecialArgs = { inherit stylix; };
     };
   };
 }
