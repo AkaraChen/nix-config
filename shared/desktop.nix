@@ -13,6 +13,7 @@
         "exec-once" = [
           "waybar"
           "ghostty"
+          "hyprpaper"
         ];
         "windowrulev2" = [
           "float, class:^(ulauncher)$"
