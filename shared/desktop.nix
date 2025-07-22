@@ -53,7 +53,6 @@
       };
     };
     home.packages = with pkgs; [
-        ghostty
         ulauncher
         hyprpaper
         bibata-cursors
@@ -73,4 +72,10 @@
       "./.config/assets".source = "${dotfiles}/.config/assets";
       "./.config/hypr/hyprpaper.conf".source = "${dotfiles}/.config/hypr/hyprpaper.conf";
     };
+    programs.ghostty = {
+      enable = true;
+      settings = {
+        theme = "catppuccin-mocha";
+      };
+    }
 }
