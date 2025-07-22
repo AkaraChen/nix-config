@@ -18,7 +18,6 @@
           "noblur, class:^(ulauncher)$"
           "opaque, class:^(ulauncher)$"
           "noanim, class:^(ulauncher)$"
-          "workspace special silent, class:^(ulauncher)$"
         ];
         bind =
           [
