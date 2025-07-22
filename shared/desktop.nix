@@ -53,6 +53,7 @@
     home.packages = with pkgs; [
         ghostty
         ulauncher
+        hyprpaper
     ];
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
