@@ -139,4 +139,9 @@
 
   # enable hyprland
   programs.hyprland.enable = true;
+
+  # enable niri
+  programs.niri = {
+    enable = true;
+  };
 }

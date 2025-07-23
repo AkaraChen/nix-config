@@ -79,7 +79,4 @@
       settings = {
       };
     };
-    programs.niri = {
-      enable = true;
-    };
 }
