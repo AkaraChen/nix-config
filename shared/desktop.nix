@@ -56,6 +56,7 @@
         ulauncher
         hyprpaper
         bibata-cursors
+        swaybg
     ];
     home.pointerCursor = {
       name = "Bibata-Modern-Classic";
@@ -71,10 +72,14 @@
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
       "./.config/assets".source = "${dotfiles}/.config/assets";
       "./.config/hypr/hyprpaper.conf".source = "${dotfiles}/.config/hypr/hyprpaper.conf";
+      "./.config/niri/config.kdl".source = "${dotfiles}/.config/niri/config.kdl";
     };
     programs.ghostty = {
       enable = true;
       settings = {
       };
+    };
+    programs.niri = {
+      enable = true;
     };
 }
