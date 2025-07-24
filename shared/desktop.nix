@@ -79,4 +79,19 @@
       settings = {
       };
     };
+    systemd.user.services.swaybg = {
+      Unit = {
+        Description = "Sway Background";
+        PartOf = "graphical-session.target";
+      };
+      Service = {
+        ExecStart = "${pkgs.swaybg}/bin/swaybg -i /home/akrc/.config/assets/bochi-1.jpg";
+        Restart = "on-failure";
+        RestartSec = "1";
+        TimeoutStopSec = "5";
+      };
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+    };
 }
