@@ -1,4 +1,4 @@
-{ pkgs, dotfiles, ... }:
+{ pkgs, dotfiles, config, ... }:
 
 {
     wayland.windowManager.hyprland = {
@@ -85,7 +85,7 @@
         PartOf = "graphical-session.target";
       };
       Service = {
-        ExecStart = "${pkgs.swaybg}/bin/swaybg -i /home/akrc/.config/assets/bochi-1.jpg";
+        ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${config.home.homeDirectory}/.config/assets/bochi-1.jpg";
         Restart = "on-failure";
         RestartSec = "1";
         TimeoutStopSec = "5";
