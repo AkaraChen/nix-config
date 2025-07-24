@@ -8,13 +8,12 @@
         decoration = {
           rounding = 10;
           blur.enabled = true;
-          inactive_opacity = 0.75;
-          active_opacity = 0.75;
+          inactive_opacity = 0.9;
+          active_opacity = 0.9;
         };
         "exec-once" = [
           "waybar"
           "ghostty"
-          "hyprpaper"
         ];
         "windowrulev2" = [
           "float, class:^(ulauncher)$"
@@ -54,7 +53,6 @@
     };
     home.packages = with pkgs; [
         ulauncher
-        hyprpaper
         bibata-cursors
         swaybg
     ];
@@ -71,7 +69,6 @@
     home.file = {
       "./.config/waybar".source = "${dotfiles}/.config/waybar";
       "./.config/assets".source = "${dotfiles}/.config/assets";
-      "./.config/hypr/hyprpaper.conf".source = "${dotfiles}/.config/hypr/hyprpaper.conf";
       "./.config/niri/config.kdl".source = "${dotfiles}/.config/niri/config.kdl";
     };
     programs.ghostty = {

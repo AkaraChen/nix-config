@@ -79,7 +79,6 @@
     packages = with pkgs; [
       kitty
       waybar
-      hyprpaper
       brave
       nerd-fonts.im-writing
     ];
