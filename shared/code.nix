@@ -13,6 +13,7 @@
     fnm
     bun
     go
+    deno
 
     # devops
     ansible
