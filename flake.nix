@@ -40,62 +40,56 @@
     }:
     {
       # home manager configurations
-      homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-linux;
-        modules = [
-          ./home/home.nix
-          ./shared/code.nix
-          ./shared/shell.nix
-        ];
-        extraSpecialArgs = {
-          inherit dotfiles;
-          inherit rust-overlay;
+      homeConfigurations =
+        let
+          sharedArgs = {
+            inherit dotfiles;
+            inherit rust-overlay;
+          };
+          linuxModules = [
+            ./home/home.nix
+            ./shared/code.nix
+            ./shared/shell.nix
+          ];
+        in
+        {
+          linux = home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.aarch64-linux;
+            modules = linuxModules;
+            extraSpecialArgs = sharedArgs;
+          };
+          "x86_64-linux" = home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.x86_64-linux;
+            modules = linuxModules;
+            extraSpecialArgs = sharedArgs;
+          };
+          "linux-gui" = home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.aarch64-linux;
+            modules = linuxModules ++ [ ./shared/desktop.nix ];
+            extraSpecialArgs = sharedArgs;
+          };
+          darwin = home-manager.lib.homeManagerConfiguration {
+            pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+            modules = [
+              ./home/home-mac.nix
+              ./shared/code.nix
+              ./shared/shell.nix
+            ];
+            extraSpecialArgs = sharedArgs;
+          };
         };
-      };
-      homeConfigurations.x86_64-linux = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          ./home/home.nix
-          ./shared/code.nix
-          ./shared/shell.nix
-        ];
-        extraSpecialArgs = {
-          inherit dotfiles;
-          inherit rust-overlay;
-        };
-      };
-
-      homeConfigurations.linux-gui = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-linux;
-        modules = [
-          ./home/home.nix
-          ./shared/code.nix
-          ./shared/shell.nix
-          ./shared/desktop.nix
-        ];
-        extraSpecialArgs = {
-          inherit dotfiles;
-          inherit rust-overlay;
-        };
-      };
-
-      homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        modules = [
-          ./home/home-mac.nix
-          ./shared/code.nix
-          ./shared/shell.nix
-        ];
-        extraSpecialArgs = {
-          inherit dotfiles;
-          inherit rust-overlay;
-        };
-      };
 
       # darwin system configuration
       darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
         modules = [
           ./os/darwin.nix
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+            }
+          )
         ];
       };
 
@@ -108,6 +102,13 @@
             {
               stylix.enable = true;
               stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+            }
+          )
+          (
+            { pkgs, ... }:
+            {
+              nixpkgs.overlays = [ rust-overlay.overlays.default ];
+              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
             }
           )
           ./os/configuration.nix

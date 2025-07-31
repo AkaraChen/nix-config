@@ -8,7 +8,6 @@
     lunarvim
 
     # languages tools
-    rustup
     uv
     fnm
     bun
