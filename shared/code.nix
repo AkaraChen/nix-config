@@ -15,6 +15,7 @@
     deno
     nixd
     nil
+    racket
 
     # devops
     ansible
