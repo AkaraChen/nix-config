@@ -82,6 +82,7 @@
       "discord"
       "font-space-mono-nerd-font"
       "steam"
+      "racket"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
