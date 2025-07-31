@@ -21,83 +21,113 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, dotfiles, nix-darwin, stylix, ... }@inputs: {
-    # home manager configurations
-    homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.aarch64-linux;
-      modules = [
-        ./home/home.nix
-        ./shared/code.nix
-        ./shared/shell.nix
-      ];
-      extraSpecialArgs = { inherit dotfiles; };
-    };
-    homeConfigurations.x86_64-linux = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [
-        ./home/home.nix
-        ./shared/code.nix
-        ./shared/shell.nix
-      ];
-      extraSpecialArgs = { inherit dotfiles; };
-    };
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      dotfiles,
+      nix-darwin,
+      stylix,
+      rust-overlay,
+      ...
+    }:
+    {
+      # home manager configurations
+      homeConfigurations.linux = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        modules = [
+          ./home/home.nix
+          ./shared/code.nix
+          ./shared/shell.nix
+        ];
+        extraSpecialArgs = {
+          inherit dotfiles;
+          inherit rust-overlay;
+        };
+      };
+      homeConfigurations.x86_64-linux = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ./home/home.nix
+          ./shared/code.nix
+          ./shared/shell.nix
+        ];
+        extraSpecialArgs = {
+          inherit dotfiles;
+          inherit rust-overlay;
+        };
+      };
 
-    homeConfigurations.linux-gui = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.aarch64-linux;
-      modules = [
-        ./home/home.nix
-        ./shared/code.nix
-        ./shared/shell.nix
-        ./shared/desktop.nix
-      ];
-      extraSpecialArgs = { inherit dotfiles; };
-    };
+      homeConfigurations.linux-gui = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        modules = [
+          ./home/home.nix
+          ./shared/code.nix
+          ./shared/shell.nix
+          ./shared/desktop.nix
+        ];
+        extraSpecialArgs = {
+          inherit dotfiles;
+          inherit rust-overlay;
+        };
+      };
 
-    homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-      modules = [
-        ./home/home-mac.nix
-        ./shared/code.nix
-        ./shared/shell.nix
-      ];
-      extraSpecialArgs = { inherit dotfiles; };
-    };
+      homeConfigurations.darwin = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        modules = [
+          ./home/home-mac.nix
+          ./shared/code.nix
+          ./shared/shell.nix
+        ];
+        extraSpecialArgs = {
+          inherit dotfiles;
+          inherit rust-overlay;
+        };
+      };
 
-    # darwin system configuration
-    darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./os/darwin.nix
-      ];
-    };
+      # darwin system configuration
+      darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./os/darwin.nix
+        ];
+      };
 
-    # nixos system configuration
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-      modules = [
-        stylix.nixosModules.stylix
-        ({ pkgs, ... }: {
-          stylix.enable = true;
-          stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-        })
-        ./os/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            extraSpecialArgs = {
-              inherit dotfiles;
+      # nixos system configuration
+      nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+        modules = [
+          stylix.nixosModules.stylix
+          (
+            { pkgs, ... }:
+            {
+              stylix.enable = true;
+              stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+            }
+          )
+          ./os/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = {
+                inherit dotfiles;
+              };
+              users.akrc = {
+                imports = [
+                  ./home/home.nix
+                  ./shared/code.nix
+                  ./shared/shell.nix
+                  ./shared/desktop.nix
+                ];
+              };
             };
-            users.akrc = {
-              imports = [
-                ./home/home.nix
-                ./shared/code.nix
-                ./shared/shell.nix
-                ./shared/desktop.nix
-              ];
-            };
-          };
-        }
-      ];
+          }
+        ];
+      };
     };
-  };
 }

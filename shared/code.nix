@@ -14,6 +14,8 @@
     bun
     go
     deno
+    nixd
+    nil
 
     # devops
     ansible
