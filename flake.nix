@@ -38,6 +38,12 @@
       rust-overlay,
       ...
     }:
+    let
+      rustModule = { pkgs, ... }: {
+        nixpkgs.overlays = [ rust-overlay.overlays.default ];
+        environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+      };
+    in
     {
       # home manager configurations
       homeConfigurations =
@@ -83,13 +89,7 @@
       darwinConfigurations."AkrMac" = nix-darwin.lib.darwinSystem {
         modules = [
           ./os/darwin.nix
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            }
-          )
+          rustModule
         ];
       };
 
@@ -104,13 +104,7 @@
               stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
             }
           )
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [ rust-overlay.overlays.default ];
-              environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-            }
-          )
+          rustModule
           ./os/configuration.nix
           home-manager.nixosModules.home-manager
           {
