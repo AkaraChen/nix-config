@@ -15,6 +15,7 @@
     deno
     nixd
     nil
+    chicken # Scheme compiler
 
     # devops
     ansible
