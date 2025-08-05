@@ -17,7 +17,8 @@
   ];
 
   programs.zsh = {
-    enable = true;
+    # will conflict with home.file.[".zshrc"]
+    # enable = true;
     oh-my-zsh = {
       enable = true;
     };
