@@ -93,8 +93,13 @@
   # Enable flatpak support
   services.flatpak.enable = true;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      # due to ulauncher
+      "libsoup-2.74.3"
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
