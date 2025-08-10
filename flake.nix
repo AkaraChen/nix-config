@@ -39,10 +39,12 @@
       ...
     }:
     let
-      rustModule = { pkgs, ... }: {
-        nixpkgs.overlays = [ rust-overlay.overlays.default ];
-        environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
-      };
+      rustModule =
+        { pkgs, ... }:
+        {
+          nixpkgs.overlays = [ rust-overlay.overlays.default ];
+          environment.systemPackages = [ pkgs.rust-bin.stable.latest.default ];
+        };
     in
     {
       # home manager configurations
@@ -50,12 +52,11 @@
         let
           sharedArgs = {
             inherit dotfiles;
-            inherit rust-overlay;
           };
           linuxModules = [
             ./home/home.nix
-            ./shared/code.nix
-            ./shared/shell.nix
+            ./home/shared/code.nix
+            ./home/shared/shell.nix
           ];
         in
         {
@@ -71,15 +72,15 @@
           };
           "linux-gui" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.aarch64-linux;
-            modules = linuxModules ++ [ ./shared/desktop.nix ];
+            modules = linuxModules ++ [ ./home/shared/desktop.nix ];
             extraSpecialArgs = sharedArgs;
           };
           darwin = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.aarch64-darwin;
             modules = [
               ./home/home-mac.nix
-              ./shared/code.nix
-              ./shared/shell.nix
+              ./home/shared/code.nix
+              ./home/shared/shell.nix
             ];
             extraSpecialArgs = sharedArgs;
           };
@@ -90,12 +91,14 @@
         modules = [
           ./os/darwin.nix
           rustModule
+          ./os/shared.nix
         ];
       };
 
       # nixos system configuration
       nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
         modules = [
+          ./os/shared.nix
           stylix.nixosModules.stylix
           (
             { pkgs, ... }:
@@ -115,9 +118,9 @@
               users.akrc = {
                 imports = [
                   ./home/home.nix
-                  ./shared/code.nix
-                  ./shared/shell.nix
-                  ./shared/desktop.nix
+                  ./home/shared/code.nix
+                  ./home/shared/shell.nix
+                  ./home/shared/desktop.nix
                 ];
               };
             };
