@@ -25,5 +25,5 @@ sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/
 ## nixos
 
 ```bash
-sudo nixos-rebuild switch --flake .#nixos --impure
+NIXPKGS_ALLOW_INSECURE=1 sudo nixos-rebuild switch --flake .#nixos --impure
 ```
