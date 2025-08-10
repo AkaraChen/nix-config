@@ -30,7 +30,7 @@
   ];
   home.file = {
     "./.config/lvim/config.lua".source = "${dotfiles}/.config/lvim/config.lua";
-    ".global.gitignore".source = "${dotfiles}/.global.gitignore";
+    ".global.gitignore".source = ../../dotfiles/.gitconfig;
   };
 
   programs.git = {
