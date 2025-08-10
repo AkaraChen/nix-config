@@ -1,6 +1,5 @@
 {
   pkgs,
-  dotfiles,
   config,
   ...
 }:
@@ -75,9 +74,9 @@
     HYPRCURSOR_SIZE = "24";
   };
   home.file = {
-    "./.config/waybar".source = "${dotfiles}/.config/waybar";
-    "./.config/assets".source = "${dotfiles}/.config/assets";
-    "./.config/niri/config.kdl".source = "${dotfiles}/.config/niri/config.kdl";
+    "./.config/waybar".source = ../../dotfiles/.config/waybar;
+    "./.config/assets".source = ../../dotfiles/.config/assets;
+    "./.config/niri/config.kdl".source = ../../dotfiles/.config/niri/config.kdl;
   };
   services.hyprpaper = {
     enable = true;

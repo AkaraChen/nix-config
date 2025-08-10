@@ -1,4 +1,4 @@
-{ pkgs, dotfiles, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -29,8 +29,8 @@
     nodePackages.serve
   ];
   home.file = {
-    "./.config/lvim/config.lua".source = "${dotfiles}/.config/lvim/config.lua";
-    ".global.gitignore".source = ../../dotfiles/.gitconfig;
+    "./.config/lvim/config.lua".source = ../../dotfiles/.config/lvim/config.lua;
+    ".global.gitignore".source = ../../dotfiles/.global.gitignore;
   };
 
   programs.git = {

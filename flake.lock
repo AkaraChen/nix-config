@@ -67,23 +67,6 @@
         "type": "github"
       }
     },
-    "dotfiles": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1753348127,
-        "narHash": "sha256-KYh4gS7NpDMWr47iedQrvsZEXkXAkhc8g5xro5FgvXM=",
-        "owner": "akarachen",
-        "repo": "dotfiles",
-        "rev": "8e8a25f2d0fe3c96f1afda13030935c13ac72892",
-        "type": "github"
-      },
-      "original": {
-        "owner": "akarachen",
-        "repo": "dotfiles",
-        "rev": "8e8a25f2d0fe3c96f1afda13030935c13ac72892",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -238,7 +221,6 @@
     },
     "root": {
       "inputs": {
-        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",

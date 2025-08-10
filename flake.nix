@@ -12,11 +12,6 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    dotfiles = {
-      url = "github:akarachen/dotfiles/8e8a25f2d0fe3c96f1afda13030935c13ac72892";
-      flake = false;
-    };
-
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,7 +27,6 @@
     {
       nixpkgs,
       home-manager,
-      dotfiles,
       nix-darwin,
       stylix,
       rust-overlay,
@@ -50,9 +44,6 @@
       # home manager configurations
       homeConfigurations =
         let
-          sharedArgs = {
-            inherit dotfiles;
-          };
           linuxModules = [
             ./home/home.nix
             ./home/shared/code.nix
@@ -63,17 +54,14 @@
           linux = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.aarch64-linux;
             modules = linuxModules;
-            extraSpecialArgs = sharedArgs;
           };
           "x86_64-linux" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
             modules = linuxModules;
-            extraSpecialArgs = sharedArgs;
           };
           "linux-gui" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.aarch64-linux;
             modules = linuxModules ++ [ ./home/shared/desktop.nix ];
-            extraSpecialArgs = sharedArgs;
           };
           darwin = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.aarch64-darwin;
@@ -82,7 +70,6 @@
               ./home/shared/code.nix
               ./home/shared/shell.nix
             ];
-            extraSpecialArgs = sharedArgs;
           };
         };
 
@@ -112,9 +99,6 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-              extraSpecialArgs = {
-                inherit dotfiles;
-              };
               users.akrc = {
                 imports = [
                   ./home/home.nix
