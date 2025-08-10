@@ -29,29 +29,28 @@
         "noblur, class:^(ulauncher)$"
         "opaque, class:^(ulauncher)$"
       ];
-      bind =
-        [
-          "$mod, F, exec, brave"
-          "$mod, RETURN, exec, ghostty"
-          "$mod, Q, killactive,"
-          "$mod, D, exec, ulauncher"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-          builtins.concatLists (
-            builtins.genList (
-              i:
-              let
-                ws = i + 1;
-              in
-              [
-                "$mod, code:1${toString i}, workspace, ${toString ws}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-              ]
-            ) 9
-          )
-        );
+      bind = [
+        "$mod, F, exec, brave"
+        "$mod, RETURN, exec, ghostty"
+        "$mod, Q, killactive,"
+        "$mod, D, exec, ulauncher"
+      ]
+      ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+        builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          ) 9
+        )
+      );
       binde = [
         "$mod, LEFT, resizeactive, -10 0"
         "$mod, RIGHT, resizeactive, 10 0"
@@ -79,6 +78,13 @@
     "./.config/waybar".source = "${dotfiles}/.config/waybar";
     "./.config/assets".source = "${dotfiles}/.config/assets";
     "./.config/niri/config.kdl".source = "${dotfiles}/.config/niri/config.kdl";
+  };
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      preload = "${config.home.homeDirectory}/.config/assets/bochi-2.jpg";
+      wallpaper = ",${config.home.homeDirectory}/.config/assets/bochi-2.jpg";
+    };
   };
   programs.ghostty = {
     enable = true;
