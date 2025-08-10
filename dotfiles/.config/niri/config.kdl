@@ -1,0 +1,56 @@
+input {
+    mod-key "Super"
+}
+
+spawn-at-startup "waybar"
+spawn-at-startup "ghostty"
+
+layout {
+    focus-ring {
+        off
+    }
+}
+
+window-rule {
+    geometry-corner-radius 10
+    opacity 0.9
+    border {
+        off
+    }
+}
+
+window-rule {
+    match app-id="ulauncher"
+    open-floating true
+    geometry-corner-radius 0
+    opacity 1.0
+    border {
+        off
+    }
+    shadow {
+        off
+    }
+}
+
+binds {
+    Mod+F { spawn "brave"; }
+    Mod+Return { spawn "ghostty"; }
+    Mod+D { spawn "ulauncher"; }
+    Mod+Q { close-window; }
+    Mod+Right { set-column-width "+20%"; }
+    Mod+Left { set-column-width "-20%"; }
+    Mod+Up { set-window-height "+10%"; }
+    Mod+Down { set-window-height "-10%"; }
+    Mod+Shift+Left { focus-column-left; }
+    Mod+Shift+Right { focus-column-right; }
+    Mod+Shift+Up { focus-window-up; }
+    Mod+Shift+Down { focus-window-down; }
+    Mod+Ctrl+Left { move-column-left; }
+    Mod+Ctrl+Right { move-column-right; }
+    Mod+Ctrl+Up { move-window-up; }
+    Mod+Ctrl+Down { move-window-down; }
+}
+
+output "Virtual-1" {
+    scale 2
+}
