@@ -15,8 +15,8 @@
   '';
 
   environment.variables = {
-    NEXT_TELEMETRY_DISABLED = 1;
-    NUXT_TELEMETRY_DISABLED = 1;
+    NEXT_TELEMETRY_DISABLED = "1";
+    NUXT_TELEMETRY_DISABLED = "1";
 
     # shell config
     EDITOR = "nvim";
