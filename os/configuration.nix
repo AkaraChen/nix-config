@@ -131,6 +131,7 @@
 
   # Setup desktop environment
   # setup gnome for display manager
+  # Will change in 25.11, search for gdm/gnome on nixos search for more instruction.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
