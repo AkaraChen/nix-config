@@ -7,6 +7,7 @@
     "cls" = "clear";
     "vog" = "gh repo view --web";
     "his" = "history | grep";
+    "cap" = "gemini -p \"commit and push\" -y";
   };
 
   environment.extraInit = ''
