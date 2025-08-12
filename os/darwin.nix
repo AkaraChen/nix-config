@@ -86,6 +86,7 @@
     ];
     masApps = {
       "Reeder classic" = 1529445840;
+      "ServerCat" = 1501532023;
     };
   };
 }
