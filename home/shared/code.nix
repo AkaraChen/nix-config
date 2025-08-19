@@ -16,7 +16,13 @@
     nixd
     nil
     chicken # Scheme compiler
+
+    # mise related
     mise
+    # TODO: add ruby related packages like nmsl build-essential
+    # nmsl build-essential, nmsl clang compiler, nmsl ruby
+    # 我给你吗放进炼丹炉
+    zlib-ng
 
     # devops
     ansible
