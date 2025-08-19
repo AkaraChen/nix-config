@@ -51,11 +51,11 @@
       "sst/tap"
     ];
     brews = [
-      "sst/tap/opencode"
-      "openjdk"
       "k6"
-      "artillery"
       "coreutils"
+      "gmp"
+      "openssl@3"
+      "libyaml"
     ];
     casks = [
       "adguard"

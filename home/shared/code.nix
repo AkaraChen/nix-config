@@ -16,6 +16,7 @@
     nixd
     nil
     chicken # Scheme compiler
+    mise
 
     # devops
     ansible
