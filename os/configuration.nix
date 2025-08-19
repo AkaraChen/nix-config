@@ -9,17 +9,6 @@
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
   ];
-  nix.settings.experimental-features = "nix-command flakes";
-
-  # Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
-  };
-
-  # Optimize Nix store
-  nix.optimise.automatic = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,8 +56,6 @@
       ];
     };
   };
-
-  programs.zsh.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.akrc = {

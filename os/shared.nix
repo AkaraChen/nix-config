@@ -1,5 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
+
 {
+  # Garbage Collection
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 30d";
+  };
+  nix.settings.experimental-features = "nix-command flakes";
+  nix.optimise.automatic = true;
+
   environment.shellAliases = {
     "cat" = "bat";
     "ls" = "lsd";
@@ -11,10 +20,14 @@
     "ag" = "gemini -y -p";
   };
 
-  environment.extraInit = ''
-    export PATH="$HOME/.local/bin:$PATH"
-    eval "$(fnm env)"
-  '';
+  programs.zsh = {
+    enable = true;
+    shellInit = ''
+      export PATH="$HOME/.local/bin:$PATH"
+      eval "$(fnm env)"
+      eval "$(${pkgs.mise}/bin/mise activate zsh)"
+    '';
+  };
 
   environment.variables = {
     NEXT_TELEMETRY_DISABLED = "1";

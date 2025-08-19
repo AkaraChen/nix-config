@@ -1,16 +1,6 @@
 { ... }:
 
 {
-  nix.settings.experimental-features = "nix-command flakes";
-
-  # Garbage Collection
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 30d";
-  };
-
-  # Optimize Nix store
-  nix.optimise.automatic = true;
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.primaryUser = "akrc";
