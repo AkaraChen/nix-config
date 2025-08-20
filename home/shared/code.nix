@@ -26,6 +26,7 @@
     openssl
     libyaml
     zlib
+    zlib-ng
     libffi
 
     # devops
