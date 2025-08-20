@@ -25,7 +25,7 @@
     glibc
     openssl
     libyaml
-    zlib
+    zlib-ng
 
     # devops
     ansible
