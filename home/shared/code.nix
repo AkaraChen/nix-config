@@ -17,7 +17,7 @@
     nil
     chicken # Scheme compiler
 
-    # mise related
+    # mise & ruby related
     mise
     gcc
     gnumake
@@ -25,7 +25,8 @@
     glibc
     openssl
     libyaml
-    zlib-ng
+    zlib
+    libffi
 
     # devops
     ansible
