@@ -16,18 +16,7 @@
     nixd
     nil
     chicken # Scheme compiler
-
-    # mise & ruby related
     mise
-    gcc
-    gnumake
-    binutils
-    glibc
-    openssl
-    libyaml
-    zlib
-    zlib-ng
-    libffi
 
     # devops
     ansible

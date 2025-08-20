@@ -40,4 +40,16 @@
     ENABLE_CORRECTION = "true";
     HYPHEN_INSENSITIVE = "true";
   };
+
+  environment.systemPackages = with pkgs; [
+    gcc
+    gnumake
+    binutils
+    glibc
+    openssl
+    libyaml
+    zlib
+    zlib-ng
+    libffi
+  ];
 }
