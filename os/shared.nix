@@ -25,7 +25,6 @@
     shellInit = ''
       export PATH="$HOME/.local/bin:$PATH"
       eval "$(fnm env)"
-      eval "$(${pkgs.mise}/bin/mise activate zsh)"
     '';
   };
 
@@ -40,16 +39,4 @@
     ENABLE_CORRECTION = "true";
     HYPHEN_INSENSITIVE = "true";
   };
-
-  environment.systemPackages = with pkgs; [
-    gcc
-    gnumake
-    binutils
-    glibc
-    openssl
-    libyaml
-    zlib
-    zlib-ng
-    libffi
-  ];
 }
