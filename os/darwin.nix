@@ -48,6 +48,7 @@
       "libyaml"
       "brew-php-switcher"
       "php@8.4"
+      "composer"
     ];
     casks = [
       "adguard"
