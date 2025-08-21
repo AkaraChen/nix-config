@@ -46,6 +46,8 @@
       "gmp"
       "openssl@3"
       "libyaml"
+      "brew-php-switcher"
+      "php@8.4"
     ];
     casks = [
       "adguard"
