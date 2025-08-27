@@ -17,6 +17,7 @@
     nil
     chicken # Scheme compiler
     ruby
+    lean4
 
     # devops
     ansible

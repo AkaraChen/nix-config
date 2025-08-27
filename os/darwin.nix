@@ -76,6 +76,9 @@
       "font-space-mono-nerd-font"
       "steam"
       "racket"
+      "visual-studio-code"
+      "chatgpt"
+      "claude"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
