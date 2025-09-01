@@ -17,9 +17,10 @@
     ruby
     lean4
 
-    # haskell (minimal for learning)
-    haskell.compiler.ghc98
+    # haskell
     haskell-language-server
+    cabal-install
+    haskellPackages.ghcup
     stack
 
     # devops
