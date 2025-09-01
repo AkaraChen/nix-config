@@ -17,6 +17,11 @@
     ruby
     lean4
 
+    # haskell (minimal for learning)
+    haskell.compiler.ghc98
+    haskell-language-server
+    stack
+
     # devops
     ansible
 
