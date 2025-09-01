@@ -36,39 +36,22 @@
       environment.systemPackages = [pkgs.rust-bin.stable.latest.default];
     };
   in {
-    # nix fmt formatter (runs alejandra over the repo)
-    formatter = {
-      aarch64-darwin = let
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-      in
-        pkgs.writeShellApplication {
-          name = "fmt";
-          runtimeInputs = [pkgs.alejandra];
-          text = ''
-            alejandra -q .
-          '';
-        };
-      aarch64-linux = let
-        pkgs = nixpkgs.legacyPackages.aarch64-linux;
-      in
-        pkgs.writeShellApplication {
-          name = "fmt";
-          runtimeInputs = [pkgs.alejandra];
-          text = ''
-            alejandra -q .
-          '';
-        };
-      x86_64-linux = let
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      in
-        pkgs.writeShellApplication {
-          name = "fmt";
-          runtimeInputs = [pkgs.alejandra];
-          text = ''
-            alejandra -q .
-          '';
-        };
-    };
+    # nix fmt formatter (single definition for all systems)
+    formatter = let
+      lib = nixpkgs.lib;
+      systems = ["aarch64-darwin" "aarch64-linux" "x86_64-linux"];
+      forAllSystems = f: lib.genAttrs systems (system: f (builtins.getAttr system nixpkgs.legacyPackages));
+    in
+      forAllSystems (
+        pkgs:
+          pkgs.writeShellApplication {
+            name = "fmt";
+            runtimeInputs = [pkgs.alejandra];
+            text = ''
+              alejandra -q .
+            '';
+          }
+      );
 
     # home manager configurations
     homeConfigurations = let
