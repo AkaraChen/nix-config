@@ -44,6 +44,7 @@
       "gmp"
       "openssl@3"
       "libyaml"
+      "ghcup"
       "brew-php-switcher"
       "php@8.4"
       "composer"
