@@ -2,9 +2,7 @@
   pkgs,
   config,
   ...
-}:
-
-{
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -28,28 +26,28 @@
         "noblur, class:^(ulauncher)$"
         "opaque, class:^(ulauncher)$"
       ];
-      bind = [
-        "$mod, F, exec, brave"
-        "$mod, RETURN, exec, ghostty"
-        "$mod, Q, killactive,"
-        "$mod, D, exec, ulauncher"
-      ]
-      ++ (
-        # workspaces
-        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-        builtins.concatLists (
-          builtins.genList (
-            i:
-            let
-              ws = i + 1;
-            in
-            [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-            ]
-          ) 9
-        )
-      );
+      bind =
+        [
+          "$mod, F, exec, brave"
+          "$mod, RETURN, exec, ghostty"
+          "$mod, Q, killactive,"
+          "$mod, D, exec, ulauncher"
+        ]
+        ++ (
+          # workspaces
+          # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+          builtins.concatLists (
+            builtins.genList (
+              i: let
+                ws = i + 1;
+              in [
+                "$mod, code:1${toString i}, workspace, ${toString ws}"
+                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+              ]
+            )
+            9
+          )
+        );
       binde = [
         "$mod, LEFT, resizeactive, -10 0"
         "$mod, RIGHT, resizeactive, 10 0"
@@ -102,7 +100,7 @@
       TimeoutStopSec = "5";
     };
     Install = {
-      WantedBy = [ "graphical-session.target" ];
+      WantedBy = ["graphical-session.target"];
     };
   };
 }
