@@ -1,7 +1,4 @@
 {pkgs, ...}: {
-  nixpkgs.config = {
-    allowBroken = true;
-  };
   home.packages = with pkgs; [
     git
     gh
@@ -23,7 +20,6 @@
     # haskell
     haskell-language-server
     cabal-install
-    haskellPackages.ghcup
     stack
 
     # devops
