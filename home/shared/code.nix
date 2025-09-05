@@ -22,6 +22,16 @@
     cabal-install
     stack
 
+    # scala
+    jdk
+    scala
+    sbt
+    metals
+    scalafmt
+    scalafix
+    coursier
+    bloop
+
     # devops
     ansible
 
