@@ -78,6 +78,7 @@
       "visual-studio-code"
       "chatgpt"
       "claude"
+      "dotnet-sdk"
     ];
     masApps = {
       "Reeder classic" = 1529445840;

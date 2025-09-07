@@ -5,7 +5,7 @@ function display_menu() {
     local prompt="$1"
     shift
     local options=("$@")
-    
+
     echo "$prompt" >&2 # Print prompt to stderr
 
     PS3="Please enter the number of your choice: "
@@ -24,6 +24,7 @@ os=$(uname -s)
 
 if [[ "$os" == "Darwin" ]]; then
     options=(
+        "Apply All"
         "Home Manager for macOS"
         "Nix Darwin"
         "Quit"
@@ -31,6 +32,15 @@ if [[ "$os" == "Darwin" ]]; then
     choice=$(display_menu "Detected macOS. Choose an option:" "${options[@]}")
 
     case "$choice" in
+        "Apply All")
+            echo "Applying all configurations for macOS..."
+            echo "Applying Home Manager for macOS..."
+            NIX_CONFIG="experimental-features = nix-command flakes" nix run home-manager/master -- switch --flake .#darwin
+            echo "Removing old zsh configs..."
+            sudo rm -rf /etc/zshrc /etc/zprofile
+            echo "Applying Nix Darwin..."
+            sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
+            ;;
         "Home Manager for macOS")
             echo "Applying Home Manager for macOS..."
             NIX_CONFIG="experimental-features = nix-command flakes" nix run home-manager/master -- switch --flake .#darwin
