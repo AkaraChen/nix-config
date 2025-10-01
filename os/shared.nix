@@ -10,7 +10,6 @@
   environment.shellAliases = {
     "cat" = "bat";
     "ls" = "lsd";
-    "cd" = "z";
     "cls" = "clear";
     "vog" = "gh repo view --web";
     "his" = "history | grep";
