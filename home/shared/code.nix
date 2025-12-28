@@ -50,9 +50,11 @@
 
   programs.git = {
     enable = true;
-    userName = "AkaraChen";
-    userEmail = "akarachen@outlook.com";
-    extraConfig = {
+    user = {
+      name = "AkaraChen";
+      email = "akarachen@outlook.com";
+    };
+    settings = {
       filter.lfs = {
         clean = "git-lfs clean -- %f";
         smudge = "git-lfs smudge -- %f";

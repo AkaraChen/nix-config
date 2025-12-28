@@ -39,7 +39,7 @@ if [[ "$os" == "Darwin" ]]; then
             echo "Removing old zsh configs..."
             sudo rm -rf /etc/zshrc /etc/zprofile
             echo "Applying Nix Darwin..."
-            sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
+            sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch --flake .
             ;;
         "Home Manager for macOS")
             echo "Applying Home Manager for macOS..."
@@ -47,7 +47,7 @@ if [[ "$os" == "Darwin" ]]; then
             ;;
         "Nix Darwin")
             echo "Applying Nix Darwin..."
-            sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
+            sudo NIX_CONFIG="experimental-features = nix-command flakes" nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch --flake .
             ;;
         "Quit")
             exit 0

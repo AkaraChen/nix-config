@@ -12,7 +12,7 @@
 - Validate flake: `nix flake check` (evals and runs checks).
 - Dry-run builds (no switch):
   - Home Manager: `nix run home-manager/master -- build --flake .#darwin`
-  - nix-darwin: `nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- build --flake .`
+  - nix-darwin: `nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- build --flake .`
   - NixOS: `sudo nixos-rebuild build --flake .#nixos --impure`
 - Update inputs: `nix flake update` (or `nix flake lock --update-input <name>`).
 

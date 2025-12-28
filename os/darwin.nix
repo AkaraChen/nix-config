@@ -58,10 +58,8 @@
       "google-chrome"
       "hoppscotch"
       "jetbrains-toolbox"
-      "thunderbird"
       "zed"
       "github"
-      "windsurf"
       "logseq"
       "font-zed-mono-nerd-font"
       "font-geist-mono-nerd-font"
@@ -70,15 +68,12 @@
       "zotero"
       "font-caskaydia-mono-nerd-font"
       "minecraft"
-      "jordanbaird-ice"
       "discord"
       "font-space-mono-nerd-font"
       "steam"
-      "racket"
       "visual-studio-code"
       "chatgpt"
       "claude"
-      "dotnet-sdk"
     ];
     masApps = {
       "Reeder classic" = 1529445840;
