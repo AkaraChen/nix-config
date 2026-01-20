@@ -13,24 +13,6 @@
     deno
     nixd
     nil
-    chicken # Scheme compiler
-    ruby
-    lean4
-
-    # haskell
-    haskell-language-server
-    cabal-install
-    stack
-
-    # scala
-    jdk
-    scala
-    sbt
-    metals
-    scalafmt
-    scalafix
-    coursier
-    bloop
 
     # devops
     ansible

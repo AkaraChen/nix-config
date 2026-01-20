@@ -39,24 +39,14 @@
       "sst/tap"
     ];
     brews = [
-      "k6"
       "coreutils"
-      "gmp"
       "openssl@3"
       "libyaml"
-      "ghcup"
-      "brew-php-switcher"
-      "php@8.4"
-      "composer"
     ];
     casks = [
       "adguard"
-      "orbstack"
-      "chatwise"
-      "rectangle"
-      "ghostty"
+      "warp"
       "google-chrome"
-      "hoppscotch"
       "jetbrains-toolbox"
       "zed"
       "github"
@@ -64,15 +54,10 @@
       "font-zed-mono-nerd-font"
       "font-geist-mono-nerd-font"
       "font-fira-code-nerd-font"
-      "figma"
-      "zotero"
       "font-caskaydia-mono-nerd-font"
-      "minecraft"
-      "discord"
       "font-space-mono-nerd-font"
       "steam"
       "visual-studio-code"
-      "chatgpt"
       "claude"
     ];
     masApps = {

@@ -83,11 +83,6 @@
       wallpaper = ",${config.home.homeDirectory}/.config/assets/bochi-2.jpg";
     };
   };
-  programs.ghostty = {
-    enable = true;
-    settings = {
-    };
-  };
   systemd.user.services.swaybg = {
     Unit = {
       Description = "Sway Background";
