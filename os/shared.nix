@@ -15,6 +15,7 @@
     "his" = "history | grep";
     "cap" = "gemini -p \"commit and push\" -y";
     "ag" = "gemini -y -p";
+    "ccb" = "claude --allow-dangerously-skip-permissions --chrome";
   };
 
   programs.zsh = {
